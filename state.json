@@ -1,15 +1,15 @@
 {
     "date": "2024-01-10",
-    "current_pnl": 6294.26,
+    "current_pnl": 6270.68,
     "active_requests": [
         {
             "id": 20240110000,
             "date": "2024-01-10",
             "ticker": "AAPL",
-            "amount": 47,
+            "amount": 46,
             "strike": 186.19,
             "expiry": "2024-02-02",
-            "premium": 373.38
+            "premium": 366.8399999999999
         }
     ],
     "active_options": [
@@ -31,7 +31,7 @@
             "expiry": "2024-02-09",
             "price": 6.55,
             "date": "2024-01-10",
-            "available_amount": 59.0
+            "available_amount": 62.0
         }
     ],
     "active_strategies": [
@@ -89,28 +89,28 @@
             "id": 20240108000,
             "date": "2024-01-08",
             "ticker": "AAPL",
-            "amount": 48,
+            "amount": 44,
             "strike": 185.56,
             "expiry": "2024-02-02",
-            "premium": 408.96
+            "premium": 374.88
         },
         {
             "id": 20240109000,
             "date": "2024-01-09",
             "ticker": "AAPL",
-            "amount": 46,
+            "amount": 48,
             "strike": 185.14,
             "expiry": "2024-02-02",
-            "premium": 391.91999999999996
+            "premium": 408.96
         },
         {
             "id": 20240110000,
             "date": "2024-01-10",
             "ticker": "AAPL",
-            "amount": 47,
+            "amount": 46,
             "strike": 186.19,
             "expiry": "2024-02-02",
-            "premium": 373.38
+            "premium": 366.8399999999999
         }
     ],
     "options_history": [
@@ -132,7 +132,7 @@
             "expiry": "2024-02-09",
             "price": 6.55,
             "date": "2024-01-10",
-            "available_amount": 59.0
+            "available_amount": 62.0
         }
     ],
     "strategies_history": [
@@ -188,23 +188,23 @@
     "profit_history": [
         {
             "date": "2024-01-08",
-            "daily_profit": 2943.96,
-            "cumulative_profit": 2943.96,
-            "objective": 2943.96,
+            "daily_profit": 2909.88,
+            "cumulative_profit": 2909.88,
+            "objective": 2909.88,
             "status": "Optimal"
         },
         {
             "date": "2024-01-09",
-            "daily_profit": 391.91999999999996,
-            "cumulative_profit": 3335.88,
-            "objective": 391.91999999999996,
+            "daily_profit": 408.96,
+            "cumulative_profit": 3318.84,
+            "objective": 408.96,
             "status": "Optimal"
         },
         {
             "date": "2024-01-10",
-            "daily_profit": 2958.38,
-            "cumulative_profit": 6294.26,
-            "objective": 2958.38,
+            "daily_profit": 2951.84,
+            "cumulative_profit": 6270.68,
+            "objective": 2951.84,
             "status": "Optimal"
         }
     ]
