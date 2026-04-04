@@ -1,0 +1,211 @@
+{
+    "date": "2024-01-10",
+    "current_pnl": 6294.26,
+    "active_requests": [
+        {
+            "id": 20240110000,
+            "date": "2024-01-10",
+            "ticker": "AAPL",
+            "amount": 47,
+            "strike": 186.19,
+            "expiry": "2024-02-02",
+            "premium": 373.38
+        }
+    ],
+    "active_options": [
+        {
+            "id": "1021949__1",
+            "source_option_id": "1021949",
+            "ticker": "AAPL",
+            "strike": 190.0,
+            "expiry": "2024-02-09",
+            "price": 7.1,
+            "date": "2024-01-08",
+            "available_amount": 0.0
+        },
+        {
+            "id": "1023961__1",
+            "source_option_id": "1023961",
+            "ticker": "AAPL",
+            "strike": 190.0,
+            "expiry": "2024-02-09",
+            "price": 6.55,
+            "date": "2024-01-10",
+            "available_amount": 59.0
+        }
+    ],
+    "active_strategies": [
+        {
+            "id": "366184__1021949__1",
+            "source_strategy_id": "366184",
+            "option_id": "1021949",
+            "ticker": "AAPL",
+            "strike": "170",
+            "expiry": "2024-02-09",
+            "buy_price": 17.5,
+            "type": "short_call",
+            "date": "2024-01-08",
+            "amount": 100.0
+        },
+        {
+            "id": "366313__1021949__1",
+            "source_strategy_id": "366313",
+            "option_id": "1021949",
+            "ticker": "AAPL",
+            "strike": "200",
+            "expiry": "2024-02-09",
+            "buy_price": 14.95,
+            "type": "short_put",
+            "date": "2024-01-08",
+            "amount": 100.0
+        },
+        {
+            "id": "368196__1023961__1",
+            "source_strategy_id": "368196",
+            "option_id": "1023961",
+            "ticker": "AAPL",
+            "strike": "170",
+            "expiry": "2024-02-09",
+            "buy_price": 18.05,
+            "type": "short_call",
+            "date": "2024-01-10",
+            "amount": 100.0
+        },
+        {
+            "id": "368355__1023961__1",
+            "source_strategy_id": "368355",
+            "option_id": "1023961",
+            "ticker": "AAPL",
+            "strike": "200",
+            "expiry": "2024-02-16",
+            "buy_price": 14.35,
+            "type": "short_put",
+            "date": "2024-01-10",
+            "amount": 100.0
+        }
+    ],
+    "requests_history": [
+        {
+            "id": 20240108000,
+            "date": "2024-01-08",
+            "ticker": "AAPL",
+            "amount": 48,
+            "strike": 185.56,
+            "expiry": "2024-02-02",
+            "premium": 408.96
+        },
+        {
+            "id": 20240109000,
+            "date": "2024-01-09",
+            "ticker": "AAPL",
+            "amount": 46,
+            "strike": 185.14,
+            "expiry": "2024-02-02",
+            "premium": 391.91999999999996
+        },
+        {
+            "id": 20240110000,
+            "date": "2024-01-10",
+            "ticker": "AAPL",
+            "amount": 47,
+            "strike": 186.19,
+            "expiry": "2024-02-02",
+            "premium": 373.38
+        }
+    ],
+    "options_history": [
+        {
+            "id": "1021949__1",
+            "source_option_id": "1021949",
+            "ticker": "AAPL",
+            "strike": 190.0,
+            "expiry": "2024-02-09",
+            "price": 7.1,
+            "date": "2024-01-08",
+            "available_amount": 0.0
+        },
+        {
+            "id": "1023961__1",
+            "source_option_id": "1023961",
+            "ticker": "AAPL",
+            "strike": 190.0,
+            "expiry": "2024-02-09",
+            "price": 6.55,
+            "date": "2024-01-10",
+            "available_amount": 59.0
+        }
+    ],
+    "strategies_history": [
+        {
+            "id": "366184__1021949__1",
+            "source_strategy_id": "366184",
+            "option_id": "1021949",
+            "ticker": "AAPL",
+            "strike": "170",
+            "expiry": "2024-02-09",
+            "buy_price": 17.5,
+            "type": "short_call",
+            "date": "2024-01-08",
+            "amount": 100.0
+        },
+        {
+            "id": "366313__1021949__1",
+            "source_strategy_id": "366313",
+            "option_id": "1021949",
+            "ticker": "AAPL",
+            "strike": "200",
+            "expiry": "2024-02-09",
+            "buy_price": 14.95,
+            "type": "short_put",
+            "date": "2024-01-08",
+            "amount": 100.0
+        },
+        {
+            "id": "368196__1023961__1",
+            "source_strategy_id": "368196",
+            "option_id": "1023961",
+            "ticker": "AAPL",
+            "strike": "170",
+            "expiry": "2024-02-09",
+            "buy_price": 18.05,
+            "type": "short_call",
+            "date": "2024-01-10",
+            "amount": 100.0
+        },
+        {
+            "id": "368355__1023961__1",
+            "source_strategy_id": "368355",
+            "option_id": "1023961",
+            "ticker": "AAPL",
+            "strike": "200",
+            "expiry": "2024-02-16",
+            "buy_price": 14.35,
+            "type": "short_put",
+            "date": "2024-01-10",
+            "amount": 100.0
+        }
+    ],
+    "profit_history": [
+        {
+            "date": "2024-01-08",
+            "daily_profit": 2943.96,
+            "cumulative_profit": 2943.96,
+            "objective": 2943.96,
+            "status": "Optimal"
+        },
+        {
+            "date": "2024-01-09",
+            "daily_profit": 391.91999999999996,
+            "cumulative_profit": 3335.88,
+            "objective": 391.91999999999996,
+            "status": "Optimal"
+        },
+        {
+            "date": "2024-01-10",
+            "daily_profit": 2958.38,
+            "cumulative_profit": 6294.26,
+            "objective": 2958.38,
+            "status": "Optimal"
+        }
+    ]
+}

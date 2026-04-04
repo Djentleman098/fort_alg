@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(/c/Users/johna/AppData/Local/Programs/Python/Python38/python.exe:*)"
+    ]
+  }
+}
