@@ -4,8 +4,10 @@ import random
 from datetime import datetime, timedelta
 from typing import List, Dict, Any, Tuple
 
-MIN_REQUESTS = 40
-MAX_REQUESTS = 50
+REQ_EXPIRY_WEEKS = 4
+
+MIN_REQUESTS = 300
+MAX_REQUESTS = 1000
 
 def load_options_from_rows(rows: List[Dict]) -> List[Dict]:
     return [
@@ -45,7 +47,7 @@ def generate_requests(ticker: str, ticker_price: float, date: str) -> List[Dict[
     req_date = datetime.strptime(date, "%Y-%m-%d").date()
     
     # expiry is friday in 3 weeks
-    target_date = req_date + timedelta(weeks=3)
+    target_date = req_date + timedelta(weeks=REQ_EXPIRY_WEEKS)
     days_until_friday = (4 - target_date.weekday()) % 7
     expiry = (target_date + timedelta(days=days_until_friday)).isoformat()
 

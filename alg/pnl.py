@@ -62,10 +62,12 @@ def calc_expiry_pnl (expiry_stock_price: float,
     for s in strategies:
         t = s.get("type")
         if t == "stock" or same_expiry(s.get("expiry"), expiry):
+            strike_val = s.get("strike")
+            strike_val = float(strike_val) if strike_val is not None else None
             strategies_pnl += calc_strategy_pnl(expiry_stock_price=expiry_stock_price,
                                                 type=str(t),
                                                 amount=float(s.get("amount", 0.0)),
-                                                strike=s.get("strike", None),
+                                                strike=strike_val,
                                                 buy_price=float(s.get("buy_price", 0.0)))
 
     ############ add this because its calculated in milp

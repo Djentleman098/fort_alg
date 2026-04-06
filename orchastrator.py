@@ -18,7 +18,7 @@ MIN_STRIKE_PERC = 0.9
 MAX_STRIKE_PERC = 1.1
 
 START_DATE = "2024-01-08"
-STEPS = 3
+STEPS = 100
 TICKER = "AAPL"
 PREM = 0.2
 
@@ -156,6 +156,13 @@ def main():
         current_protections = state["options_history"]
 
         result = solve_milp(daily_requests, current_protections, options, strategies, prem, base_option_price, current_date_str)
+
+        if result["status"] == "infeasible":
+            print(current_date_str, "SKIPPED — no feasible coverage for today")
+            next_date = current_date + timedelta(days=1)
+            state["date"] = next_date.isoformat()
+            continue
+
         print(current_date_str, "Finished MILP", "$", result["objective"])
 
         # update the state with requests, options, strategy

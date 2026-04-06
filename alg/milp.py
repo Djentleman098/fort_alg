@@ -6,10 +6,7 @@ from .pnl import calc_expiry_pnl
 # -----------------------------
 # CONSTANTS
 # -----------------------------
-COVER_TYPES = ["inventory", "buy", "cash"]
-STRATEGY_TYPES = ["stock", "long_call", "short_call", "long_put", "short_put"]
-# STRATEGY_TYPES = ["long_call", "short_call", "long_put", "short_put"]
-STRATEGIES = len(STRATEGY_TYPES)
+STRATEGY_TYPES = { "stock": 0, "long_call": 2, "short_call": 2, "long_put": 2, "short_put": 2 } # maximum amount of strategies allowed per new options
 
 def is_valid_protection_for_request(req: Dict[str, Any], prot: Dict[str, Any], current_date: Any) -> bool:
     return (
@@ -175,7 +172,7 @@ def solve_milp(
         (o["id"], s["id"]): pulp.LpVariable(
             f"nos_{o['id']}_{s['id']}",
             lowBound=0,
-            upBound=max_contracts_for_option[o["id"]],
+            upBound=STRATEGY_TYPES.get(s["type"], 0) * max_contracts_for_option[o["id"]],
             cat="Integer",
         )
         for o, s in valid_strategy_per_option
@@ -247,21 +244,22 @@ def solve_milp(
         oid, sid = o["id"], s["id"]
         if oid not in new_option_contracts:
             continue
+        max_per_contract = STRATEGY_TYPES.get(s["type"], 0)
         model += (
             new_option_strategies[(oid, sid)]
-            <= new_option_contracts[oid]
+            <= max_per_contract * new_option_contracts[oid]
         ), f"strategy_requires_option_{oid}_{sid}"
 
     # only 1 per strategy type per option (GLOBAL)
     valid_option_ids = set(new_option_contracts.keys())
     for oid in valid_option_ids:
-        for stype in STRATEGY_TYPES:
+        for stype, max_per_contract in STRATEGY_TYPES.items():
             model += (
                 pulp.lpSum(
                     new_option_strategies.get((oid, s["id"]), 0)
                     for s in strategies if s["type"] == stype
-                ) <= new_option_contracts[oid]
-            ), f"max_one_strategy_type_per_option_{oid}_{stype}"
+                ) <= max_per_contract * new_option_contracts[oid]
+            ), f"max_strategy_type_per_option_{oid}_{stype}"
 
     # -----------------------------
     # OBJECTIVE FUNCTION
@@ -353,6 +351,16 @@ def solve_milp(
     model.solve(solver)
     status_stage1 = pulp.LpStatus[model.status]
     print("status stage 1 =", status_stage1)
+
+    if status_stage1 == "Infeasible":
+        return {
+            "status": "infeasible",
+            "objective": 0.0,
+            "new_requests": [],
+            "protections": protections,
+            "new_options": [],
+            "new_strategies": []
+        }
 
     # fix minimum number of opened options
     min_open_options = int(round(pulp.value(
